@@ -17,8 +17,8 @@ class ContactController extends Controller
         $request->validate([
             'name' => 'required',
             
-            'email' => 'email',
-            'postcode' => 'required',
+            'email' => 'email|min:8',
+            'postcode' => 'regex:/^[0-9]{3}-[0-9]{4}$/',
             'address' => 'required',
             'contact' => 'required',
         
